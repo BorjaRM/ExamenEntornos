@@ -9,7 +9,7 @@ import java.util.Scanner;
  * 
  * Hay dos errores:
  * 
- *  - Corregido charAt(-1) que indica la existencia de la letra en la frase.
+ *  - La "i" del bucle for tenia que ser inicializada a 1.
  * 
  */
 public class Putadon {
@@ -24,26 +24,7 @@ public class Putadon {
 		//Pedimos datos
 		frase = pideFrase("Introduce tu frase");
 		letra = pideLetra("Introduce la letra a buscar");
-		buscaLetras(frase,letra);
-		 
-		
-		//-------
-		//Scanner sc=new Scanner(System.in);
-		
-		//System.out.println("Introduce tu frase");
-		//frase = sc.nextLine();
-		
-		//System.out.println("Introduce la letra a buscar");
-		//letra = sc.nextLine().charAt(0); //charAt(0) devuelve la primera letra
-		
-		//Buscamos las letras
-		//for(int i=0;i<frase.length();i++){
-			//if(letra==frase.charAt(i-1)){
-				//numRepeticiones=numRepeticiones;
-				//System.out.println("Letra "+letra+" encontrada en la posicion "+i);
-			//}
-		//}
-		//System.out.println("Total repeticiones "+numRepeticiones);
+		buscaLetras(frase,letra);		
 	
 	}
 	public static String pideFrase(String msj){
@@ -60,9 +41,7 @@ public class Putadon {
 	}
 	public static void buscaLetras(String frase, char letra){
 		int numRepeticiones=0;
-		//System.out.println(frase.length());
-		for(int i=0;i<frase.length();i++){
-			System.out.println(letra);
+		for(int i=1;i<frase.length();i++){
 			if(letra==frase.charAt(i-1)){
 				numRepeticiones=numRepeticiones++;
 				System.out.println("Letra "+letra+" encontrada en la posicion "+i);
